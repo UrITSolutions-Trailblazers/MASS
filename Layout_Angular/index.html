@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="resources/angular.min.js"></script>
+    <script src="resources/angular-route.min.js"></script>
+    <script src="resources/angular-cookies.min.js"></script>
+
+    <!-- Angular app dependencies -->
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.route.js"></script>
+
+    <!-- Angular app controllers and services -->
+    <script src="app/components/home/homeController.js"></script>
+    <script src="app/components/shared_components/navController.js"></script>
+    <script src="app/components/loader/loaderController.js"></script>
+    <script src="app/components/registration/registerController.js"></script>
+    <script src="app/components/login/loginController.js"></script>
+    <script src="app/components/profile/profileController.js"></script>
+    <script src="app/components/admin/adminController.js"></script>
+
+    <title>MASS</title>
+
+    <style type="stylesheet">
+        #loader-control { position: absolute; top :300px; left: 0; right: 0; bottom: 0; margin: auto; }
+    </style>
+</head>
+
+<body ng-app="myApp" style="background-image: url('images/bground.png')">
+    <div id="loader-control" ng-controller="loaderController as loaderCtrl">
+        <div id="loader-modal" class="modal">
+            <div class="modal-content">
+                <center><img src="images/loader.gif" alt="loader"></center>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script>
+        $(window).on('load', function () {
+            $('.modal').modal();
+            $('#loader-modal').modal('open');
+        
+            $('#content').delay(600).fadeIn();
+
+        });
+    </script>
+    <div class="container" id="content">
+        <div class="header" id="header" style="padding-top: 15px">
+            <div ng-include="'app/components/shared_components/header.html'"></div>
+        </div>
+        <div class="body">
+
+            <!-- 
+                Side slide for profile.
+             -->
+            <div id="profile">
+                <ul class="side-nav" id="profile-nav">
+                    <div ng-include="'app/components/profile/profile.html'"></div>
+                </ul>
+            </div>
+            <!-- 
+                Login Modal.
+             -->
+            <div id="login-modal" class="modal">
+                <div class="modal-content">
+                    <div ng-include="'app/components/login/login.html'"></div>
+                </div>
+            </div>
+
+            <!-- 
+                Side slide nav for register form.
+             -->
+            <div id="register">
+                <ul class="side-nav" id="register-form">
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="images/side-back.jpg">
+                            </div>
+                            <a href="">
+                                <span class="white-text name">
+                                    <h3>Register</h3>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container">
+                            <div ng-include="'app/components/registration/register.html'"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 
+                View that will change when routed.
+             -->
+            <div ng-view></div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script>
+        function sideNavToggle() {
+            $('#side').sideNav('hide');
+            $('#register-side').sideNav('show');
+        }
+
+        function sideNavToggleProfile() {
+            $('#side').sideNav('hide');
+            $('#profile-side').sideNav('show');
+        }
+    </script>
+
+</body>
+
+</html>

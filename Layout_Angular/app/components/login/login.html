@@ -1,0 +1,39 @@
+<h2 style="align-content: center;background-image: url('images/nav-back3.jpg')" class="white-text">
+    <center>MASS</center>
+</h2>
+<div class="container" ng-controller="loginController as loginCtrl">
+    <div class="row">
+        <form class="col s12" ng-submit="login()">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email-login" type="email" class="validate" ng-model="user.email">
+                    <label for="email-login" data-error="wrong" data-success="right">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password-login" type="password" class="validate" ng-model="user.password">
+                    <label for="password-login">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="preloader-wrapper active" ng-show="loader">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <input ng-show="!loader" type="submit" class="btn green" value="Login">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

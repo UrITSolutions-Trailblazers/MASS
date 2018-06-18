@@ -1,0 +1,30 @@
+<div ng-controller="profileController as profileCtrl">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="images/side-back2.jpg">
+            </div>
+            <a href="">
+                <img class="circle" src="images/pp.jpg">
+            </a>
+            <a href="">
+                <span class="white-text name">{{currentUser.firstName}}</span>
+            </a>
+            <a href="">
+                <span class="white-text email">{{currentUser.email}}</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <a href="#!/home">
+            <i class="material-icons left">home</i>Home</a>
+    </li>
+    <li ng-show="currentUser.role == 'ADMIN'">
+        <a href="" ng-click="profileCtrl.logout()">
+            <i class="material-icons left">person_pin</i>Admin</a>
+    </li>
+    <li>
+        <a href="" ng-click="profileCtrl.logout()">
+            <i class="material-icons left">reply_all</i>Logout</a>
+    </li>
+</div>
