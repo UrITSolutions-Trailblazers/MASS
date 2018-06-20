@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
             "email": val.email
         },'idontknow');
 
-        return res.header('x-auth-token',token).send(val);
+        return res.header('x-auth-token',token  ).send(val);
     })
 
 });

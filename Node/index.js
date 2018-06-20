@@ -13,12 +13,14 @@ const mongoose = require('mongoose');
 const cors = require('./app/filters/app.filter.cors');
 const userRoutes = require('./app/routes/app.route.user');
 const admin = require('./modules/admin/admin.js');
+const cleanRoute = require('./app/routes/app.route.clean');
+const googleRoutes = require('./app/routes/app.route.googleAuth')
 
 /**
  * Constants for the app.
  * **/
 const API_Port = 8086;
-const dbUrl = 'mongodb://localhost:27017/';
+const dbUrl = 'mongodb://localhost:27017/mass';
 
 /**
  * Establishing initial connection with the Mongo DB.
@@ -27,13 +29,22 @@ mongoose.connect(dbUrl,()=>{
   console.log('Mongo DB connected.');
 });
 
+/**
+ * Middlewares.
+ * **/
 app.use(cors);              // CORS filter.
 app.use(bodyParser.json()); // Support json encoded bodies
 
 app.use(bodyParser.urlencoded({
   extended: true
-}));                        // Support url encoded bodies
+}));
+
+/**
+ * Routes.
+ * **/
 app.use('/mass/user', userRoutes);
+app.use('/mass/clean', cleanRoute);
+app.use('/', googleRoutes);
 
 /**
  * Configuration for the application port.
