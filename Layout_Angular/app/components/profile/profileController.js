@@ -8,7 +8,8 @@ app.controller('profileController', [
       console.log('Logging out');
       $rootScope.currentUser = null;
       $cookieStore.remove('currentUser');
-      Materialize.toast('Logged out', 4000);
+      $('#profile-nav').sidenav('close');
+      M.toast({html: 'Logged out'});
     }
 
   }

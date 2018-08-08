@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
 
 require('../../config/passport')(passport);
 
@@ -12,7 +13,7 @@ router.use(session({
     resave: true,
     // using store session on MongoDB using express-session + connect
     store: new MongoStore({
-        url: 'mongodb://localhost:27017/mass',
+        mongooseConnection: mongoose.connection,
         collection: 'sessions'
     })
 }));

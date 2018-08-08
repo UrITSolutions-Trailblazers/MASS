@@ -1,68 +1,71 @@
-<nav style="background-image: url('images/nav-back3.jpg');" ng-controller="navController as navCtrl">
-    <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">
-            <i> </i>
-            <img height="115px" width="130px" style="padding-bottom: 35px" ng-src="images/logo.png">
-        </a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-            <li>
-                <a href="#!/home">
-                    <i class="material-icons left">home</i>Home</a>
-            </li>
-            <li ng-show="currentUser == null ">
-                <a href="" onclick="$('#login-modal').modal('open');">
-                    <i class="material-icons left">transfer_within_a_station</i>Login</a>
-            </li>
-            <li ng-show="currentUser == null ">
-                <a data-activates="register-form" id="register-side" href="">
-                    <i class="material-icons left">people</i>Register</a>
-            </li>
-            <li ng-show="currentUser != null ">
-                <a href="#!/admin">Admin</a>
-            </li>
-            <li ng-hide="currentUser == null ">
-                <a data-activates="profile-nav" id="profile-side" href="">
-                    <i class="material-icons left">contacts</i>{{currentUser.firstName}}</a>
-            </li>
-        </ul>
+<div class="navbar-fixed" style="position: absolute;z-index:10;">
+    <nav ng-controller="navController as navCtrl" class="teal my-nav z-depth-0">
+        <div class="nav-wrapper">
+            <a class="brand-logo">
+                <i> </i>
+                <img height="115px" width="130px" style="padding-bottom: 35px" ng-src="images/logo.png">
+            </a>
+            <a href="" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
 
-        <ul class="side-nav" id="mobile-demo">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="images/side-back.jpg">
+            <ul class="right hide-on-med-and-down">
+                <li id="nav-home">
+                    <a href="#!/home">
+                        <i class="material-icons left">home</i>Home</a>
+                </li>
+                <li ng-show="currentUser == null ">
+                    <a href="" onclick="$('#login-modal').modal('open');">
+                        <i class="material-icons left">transfer_within_a_station</i>Login</a>
+                </li>
+                <li ng-show="currentUser == null ">
+                    <a data-activates="register-form" id="register-side" href="">
+                        <i class="material-icons left">people</i>Register</a>
+                </li>
+                <li ng-show="currentUser != null" id="nav-admin">
+                    <a href="#!/admin">Admin</a>
+                </li>
+                <li ng-hide="currentUser == null ">
+                    <a data-activates="profile-nav" id="profile-side" href="">
+                        <i class="material-icons left">contacts</i>{{currentUser.firstName}}</a>
+                </li>
+            </ul>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="images/side-back.jpg">
+                        </div>
+                        <a href="">
+                            <span class="white-text name">_</span>
+                        </a>
                     </div>
-                    <a href="">
-                        <span class="white-text name">_</span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <a href="#!/home">
-                    <i class="material-icons left">home</i>Home</a>
-            </li>
-            <li ng-show="currentUser == null ">
-                <a href="" onclick="$('#login-modal').modal('open');">
-                    <i class="material-icons left">transfer_within_a_station</i>Login</a>
-            </li>
-            <li ng-show="currentUser == null ">
-                <a onclick="sideNavToggle()" data-activates="register-form" id="register-side" href="">
-                    <i class="material-icons left">people</i>Register</a>
-            </li>
-            <li ng-show="currentUser != null ">
-                <a href="#!/admin">Admin</a>
-            </li>
-            <li ng-hide="currentUser == null ">
-                <a onclick="sideNavToggleProfile()" data-activates="profile-nav" id="profile-side" href="">
-                    <i class="material-icons left">contacts</i>{{currentUser.firstName}}</a>
-            </li>
-            <li>
-                <a id="test-con" href="" class="btn" ng-click="test()">Test Connection</a>
-            </li>
-        </ul>
-    </div>
+                </li>
+                <li>
+                    <a href="#!/home">
+                        <i class="material-icons left">home</i>Home</a>
+                </li>
+                <li ng-show="currentUser == null ">
+                    <a href="" onclick="$('#login-modal').modal('open');">
+                        <i class="material-icons left">transfer_within_a_station</i>Login</a>
+                </li>
+                <li ng-show="currentUser == null ">
+                    <a onclick="sideNavToggle()" data-activates="register-form" id="register-side" href="">
+                        <i class="material-icons left">people</i>Register</a>
+                </li>
+                <li ng-show="currentUser != null ">
+                    <a href="#!/admin">Admin</a>
+                </li>
+                <li ng-hide="currentUser == null ">
+                    <a onclick="sideNavToggleProfile()" data-activates="profile-nav" id="profile-side" href="">
+                        <i class="material-icons left">contacts</i>{{currentUser.firstName}}</a>
+                </li>
+                <li>
+                    <a id="test-con" href="" class="btn" ng-click="test()">Test Connection</a>
+                </li>
+            </ul>
+        </div>
 
-</nav>
+    </nav>
+</div>

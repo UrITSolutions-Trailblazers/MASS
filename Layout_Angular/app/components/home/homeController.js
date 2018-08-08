@@ -1,31 +1,46 @@
-app.controller('homeController',['$scope','$http','REST_URI',function($scope,$http,REST_URI){
-    
-    $scope.questions=[];
+app.controller('homeController', ['$scope', '$http', 'REST_URI', '$route',
+    function ($scope, $http, REST_URI, $route) {
 
-    $('.carousel').carousel(
-        {
-            fullWidgth: true,
-            fullHeight: false,
-            indicators: true,
-            noWrap: false
-        }
-    );
+        /**
+         * Materialize CSS JQuery functions.
+         */
+        $(document).ready(function () {
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true
+            });
 
-    $('.carousel-slider').slider({ full_width: true });//slider init
+            $("#nav-home").addClass("active");
 
-    $scope.openQuesModal = function(){
-        $('.carousel').carousel({fullWidth: true});
-        $('#quesModal').modal('open');
-
-        $http.post(REST_URI+'/getQuestions').then(function(response){
-            console.log('data recieved');
-            $scope.questions = response.data;
-
-            console.log($scope.questions);
-
-        },function(error){
-            Materialize.toast(error, 4000);
+            $("nav").addClass("transparent")
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 50) {
+                    $("nav").removeClass("transparent")
+                } else {
+                    if($route.current.$$route.originalPath === '/home')
+                        $("nav").addClass("transparent");
+                }
+            });
         });
-    }
 
-}]);
+        /**
+         * Angular functions.
+         */
+        $scope.questions = [];
+
+        $scope.openQuesModal = function () {
+
+            $('#quesModal').modal('open');
+
+            $http.post(REST_URI + '/getQuestions').then(function (response) {
+                console.log('data recieved');
+                $scope.questions = response.data;
+
+                console.log($scope.questions);
+
+            }, function (error) {
+                Materialize.toast(error, 4000);
+            });
+        }
+
+    }]);

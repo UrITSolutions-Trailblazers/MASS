@@ -1,221 +1,102 @@
-<!-- <div>
-    <div class="carousel carousel-slider">
-        <a class="carousel-item" href="">
-            <img src="images/mass.jpg">
+<div id="back-slider" style="z-index: 1;">
+    <div class="carousel carousel-slider z-depth-2">
+        <a class="carousel-item">
+            <img src="../../../images/sliders/1.jpg" width="100%">
         </a>
-        <a class="carousel-item" href="">
-            <img src="images/computer.jpg">
-        </a> 
-        <a class="carousel-item" href="">
-            <img src="images/english.jpg">
+        <a class="carousel-item">
+            <img src="../../../images/sliders/2.jpg" width="100%">
         </a>
-        <a class="carousel-item" href="">
-            <img src="images/maths.jpg">
+        <a class="carousel-item">
+            <img src="../../../images/sliders/3.jpg" width="100%">
         </a>
-        <a class="carousel-item" href="">
-            <img src="images/chemistry.jpg">
+        <a class="carousel-item">
+            <img src="../../../images/sliders/4.jpg" width="100%">
         </a>
-        <a class="carousel-item" href="">
-            <img src="images/physics.jpg">
-        </a>
-    </div>
-</div> -->
-
-<div class="row">
-    <div class="col m6" style="padding: 5px">
-        <div class="card sticky-action hoverable">
-            <div class="card-image">
-                <img height="300px" width="243px" class="activator" src="images/english-card.jpg">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4 ">English
-                    <i class="material-icons right">more_vert</i>
-                </span>
-            </div>
-            <div class="card-action">
-                <div class="row">
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">error</i>Try</a>
-                        </center>
-                    </div>
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">done_all</i>Buy</a>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <i class="material-icons right">close</i>English</span>
-                <p>English language tutorial. Learn English grammar and vocabulary with games, audio, online English lessons,
-                    and more!</p>
-            </div>
-        </div>
-    </div>
-    <div class="col m6" style="padding: 5px">
-        <div class="card sticky-action hoverable">
-            <div class="card-image">
-                <img height="300px" width="243px" class="activator" src="images/science-card.jpg">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Science
-                    <i class="material-icons right pulse">more_vert</i>
-                </span>
-            </div>
-            <div class="card-action">
-                <div class="row">
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large" ng-click="openQuesModal()">
-                                <i class="material-icons right">error</i>Try</a>
-                        </center>
-                    </div>
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">done_all</i>Buy</a>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <i class="material-icons right">close</i>Science</span>
-                <p>Everything from Research and Study Basics to Kingdoms are explored and discovered in Basic Science. You will
-                    find tutorials on such topics as Geology, Cells and Genetics, Evolution, Weather and Climate, and Energy
-                    in this tremendously packed course. Be inspired by everything living on this planet </p>
-            </div>
-        </div>
-    </div>
-    <div class="col m6" style="padding: 5px">
-        <div class="card sticky-action hoverable">
-            <div class="card-image">
-                <img height="300px" width="243px" class="activator" src="images/physics-card.jpg">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Physics
-                    <i class="material-icons right">more_vert</i>
-                </span>
-            </div>
-            <div class="card-action">
-                <div class="row">
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">error</i>Try</a>
-                        </center>
-                    </div>
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right ">done_all</i>Buy</a>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <i class="material-icons right">close</i>Physics</span>
-                <p>In this tutorial we begin to explore ideas of velocity and acceleration. We do exciting things like throw
-                    things off cliffs (far safer on paper than in real life) and see how high a ball will fly in the air.
-                    Introduction to physics · Displacement, velocity, and time · Acceleration · Kinematic formulas and projectile
-                    motion.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col m6" style="padding: 5px">
-        <div class="card sticky-action hoverable">
-            <div class="card-image">
-                <img height="300px" width="243px" class="activator" src="images/computer-card.jpg">
-            </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Computer Science
-                    <i class="material-icons right pulse">more_vert</i>
-                </span>
-            </div>
-            <div class="card-action">
-                <div class="row">
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">error</i>Try</a>
-                        </center>
-                    </div>
-                    <div class="col m6">
-                        <center>
-                            <a href="" class="waves-effect btn btn-large">
-                                <i class="material-icons right">done_all</i>Buy</a>
-                        </center>
-                    </div>
-                </div>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">
-                    <i class="material-icons right">close</i>Computer Science</span>
-                <p>Acids and Bases · Acidic and Basic Properties of Salts · Buffers · Titrations: Strong Acids and Strong Bases
-                    · Titrations: Weak Acids and Strong Bases · Amino Acid Titrations · Non-Standard Electrochemical Cells
-                    · Electroplating · Chemical Kinetics: Rate Constants and Rate Laws · Integrated Rate Laws: Half Lives
-                    ·
-                </p>
-            </div>
-        </div>
     </div>
 </div>
-<!-- Modal Structure -->
-<div id="quesModal" class="modal">
-    <div class="modal-content">
-        <div class="carousel" ng-repeat="que in questions">
-            <a class="carousel-item">
-                <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
-                            <div class="card-content">
-                                <p>que.question</p>
-                                <form action="">
-                                    <p>
-                                        <input class="with-gap" name="group1" type="radio" id="op1" />
-                                        <label for="op1">{{que.op1}}</label>
-                                    </p>
-                                    <p>
-                                        <input class="with-gap" name="group1" type="radio" id="op2" />
-                                        <label for="op1">{{que.op2}}</label>
-                                    </p>
-                                    <p>
-                                        <input class="with-gap" name="group1" type="radio" id="op3" />
-                                        <label for="op1">{{que.op3}}</label>
-                                    </p>
-                                    <p>
-                                        <input class="with-gap" name="group1" type="radio" id="op4" />
-                                        <label for="op1">{{que.op4}}</label>
-                                    </p>
-                                    <div class="row">
-                                        <div class="col s12">
-                                            <input type="submit" class="btn green" value="Submit">
-                                        </div>
-                                    </div>
-                                </form>
+<div id="login-card" style="z-index: 5; position: absolute; top: 15%; right: 5%;" ng-controller="loginController as loginCtrl">
+
+    <div ng-show="currentUser == null " class="card-panel right hide-on-med-and-down z-depth-4">
+        <form ng-submit="login()" style="width: 100%">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email-login-card" type="email" class="validate" ng-model="user.email">
+                    <label for="email-login-card" data-error="wrong" data-success="right">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password-login-card" type="password" class="validate" ng-model="user.password">
+                    <label for="password-login-card">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="preloader-wrapper active" ng-show="loader">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
                             </div>
                         </div>
                     </div>
+                    <input ng-show="!loader" type="submit" class="btn green" value="Login" style="width: 100%">
                 </div>
-            </a>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </form>
     </div>
 </div>
+<div>
+    <div class="container">
+        <div class="card-panel hoverable">
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <div class="">
+                        <img src="../../../images/home-chem.jpg" alt="" width="70%">
+                    </div>
+                </div>
+                <div class="col s12 m8 l8">
+                    <div class="">
+                        <p>
+                            Chemistry is the scientific discipline involved with compounds composed of atoms, i.e. elements, and molecules, i.e. combinations
+                            of atoms: their composition, structure, properties, behavior and the changes they undergo during
+                            a reaction with other compounds.[1][2] Chemistry addresses topics such as how atoms and molecules
+                            interact via chemical bonds to form new chemical compounds. There are four types of chemical
+                            bonds: covalent bonds, in which compounds share one or more electron(s); ionic bonds, in which
+                            a compound donates one or more electrons to another compound to produce ions (cations and anions);
+                            hydrogen bonds; and Van der Waals force bonds.
 
-
-<script>
-    $(document).ready(function () {
-        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-        $('.carousel').carousel({fullWidth: true});
-    });
-</script>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-panel hoverable">
+            <div class="row">
+                <div class="col s12 m8 l8">
+                    <div class="">
+                        <p>
+                            Chemistry is the scientific discipline involved with compounds composed of atoms, i.e. elements, and molecules, i.e. combinations
+                            of atoms: their composition, structure, properties, behavior and the changes they undergo during
+                            a reaction with other compounds.[1][2] Chemistry addresses topics such as how atoms and molecules
+                            interact via chemical bonds to form new chemical compounds. There are four types of chemical
+                            bonds: covalent bonds, in which compounds share one or more electron(s); ionic bonds, in which
+                            a compound donates one or more electrons to another compound to produce ions (cations and anions);
+                            hydrogen bonds; and Van der Waals force bonds.
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="">
+                        <img class="right" src="../../../images/home-chem.jpg" alt="" width="70%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

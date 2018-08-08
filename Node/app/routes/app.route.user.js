@@ -41,6 +41,7 @@ router.post('/register', async (req, res) => {
     user.password = await bcrypt.hash(user.password, 10);
 
     await user.validate(async (err) => {
+        console.log(err)
         if (err) return res.status(400).send(err.errors);
 
         let result = await User.create(user);
